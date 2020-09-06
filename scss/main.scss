@@ -1,0 +1,20 @@
+@include config;
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  color: #000;
+  background: $primary-color;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.6rem;
+  line-height: 2;
+}
+

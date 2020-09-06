@@ -1,0 +1,111 @@
+$primary-color: white ;
+$secondary-color: #eece1e;
+$show-home-image: true;
+$home-image: url("../img/header.jpg");
+$background-opacity: 0.9;
+
+@mixin background{
+  background-image: $home-image;
+  background-position: center center;
+  background-size: cover;
+  min-height: 56rem;
+  height: 100vh;
+}
+
+@mixin easeOut {
+  transition: all 0.5s ease-out
+}
+
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+h1{
+  font-size: 3.8rem;
+}
+
+h2{
+  font-size: 3.4rem;
+}
+
+h3{
+  font-size: 3rem;
+}
+
+h4{
+  font-size: 2.6rem;
+}
+
+img{
+  max-width: 100%;
+}
+
+.contenedor {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.seccion{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.fw-300{
+  font-weight: 300;
+}
+
+.centrar-texto{
+  text-align: center;
+}
+
+.contenido-centrado{
+  max-width: 80rem;
+}
+
+//* Botones
+.boton{
+  color:white;
+  border: none;
+  display: block;
+  flex: 0 0 100%;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 3rem;
+  padding: 1rem 3rem;
+  text-align: center;
+  text-decoration: none;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 768px){
+  .boton{
+    display: inline-block;
+    flex: 0 0 auto;
+  }
+}
+
+.d-block{
+  display: block !important;
+}
+
+.boton-amarillo{
+  background-color: #e08709;
+}
+
+.boton-verde{
+  background-color: #71b100;
+}
+
+
+
+
+
+
