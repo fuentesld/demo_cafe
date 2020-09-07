@@ -6,8 +6,8 @@ html {
   box-sizing: inherit; }
 
 body {
-  color: #fff;
-  background: #e4dede;
+  color: #000;
+  background: #ececec;
   color: #000;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
@@ -55,45 +55,43 @@ img {
 .contenido-centrado {
   max-width: 80rem; }
 
-.boton {
-  color: #fff;
-  border: none;
-  display: block;
-  flex: 0 0 100%;
-  font-weight: 700;
-  font-size: 1.8rem;
-  margin-top: 3rem;
-  padding: 1rem 3rem;
-  text-align: center;
-  text-decoration: none; }
-  .boton:hover {
-    cursor: pointer; }
-
 @media (min-width: 768px) {
-  .boton {
-    display: inline-block;
-    flex: 0 0 auto; } }
-
-.d-block {
-  display: block !important; }
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  .centrar-columnas {
+    justify-content: center; }
+  .columnas-4 {
+    flex: 0 0 calc( 33.3% - 1rem); }
+  .columnas-6 {
+    flex: 0 0 calc( 50% - 1rem); }
+  .columnas-8 {
+    flex: 0 0 calc( 66.6% - 1rem); }
+  .columnas-10 {
+    flex: 0 0 calc( 83.3% - 1rem); }
+  .columnas-12 {
+    flex: 0 0 100%; } }
 
 .btn {
   display: block;
-  text-align: center;
-  padding: 1rem 3rem;
-  margin-top: 2rem;
-  text-decoration: none;
+  flex: 0 0 100%;
   font-family: 'PT Sans', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
   font-size: 2rem;
-  margin: 2rem 0; }
+  font-weight: 700;
+  margin: 2rem 0;
+  margin-top: 2rem;
+  padding: 1rem 3rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase; }
   .btn:hover {
     cursor: pointer; }
 
 @media (min-width: 768px) {
   .btn {
-    display: inline-block; } }
+    display: inline-block;
+    flex: 0 0 auto; } }
 
 .btn-primario {
   background-color: black;
@@ -154,8 +152,6 @@ img {
   flex-wrap: wrap; }
   .contenido-principal .blog, .contenido-principal .cursos {
     flex: 0 0 100%; }
-    .contenido-principal .blog h2, .contenido-principal .cursos h2 {
-      text-align: center; }
   .contenido-principal .cursos {
     order: -1; }
 
@@ -189,17 +185,22 @@ img {
 .cursos-lista {
   padding: 0;
   list-style: none; }
-  .cursos-lista .curso {
-    padding-bottom: 3rem;
-    border-bottom: 1px solid #e1e1e1; }
-    .cursos-lista .curso:last-of-type {
-      border-bottom: none; }
-    .cursos-lista .curso p {
-      font-family: 'PT Sans', sans-serif;
-      font-size: 2rem;
-      font-weight: 700; }
-      .cursos-lista .curso p span {
-        font-weight: 400; }
+
+.curso {
+  padding: 3rem 0;
+  border-bottom: 1px solid #784d3c; }
+  .curso:last-of-type {
+    border-bottom: none; }
+  .curso p {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 700; }
+    .curso p span {
+      font-weight: 400; }
+    .curso p.descripcion {
+      font-weight: 400; }
+  .curso h4 {
+    margin-top: 0; }
 
 .site-footer {
   background-color: black;
@@ -213,3 +214,27 @@ img {
     font-weight: 400; }
     .site-footer p span {
       font-weight: 700; }
+
+.formulario-contacto {
+  background-color: #ececec;
+  padding: 1rem; }
+  .formulario-contacto .campo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem; }
+    .formulario-contacto .campo label {
+      flex: 0 0 8rem; }
+    .formulario-contacto .campo input:not([type="submit"]), .formulario-contacto .campo textarea {
+      flex: 1;
+      border: 1px solid black;
+      padding: 1rem; }
+    .formulario-contacto .campo textarea {
+      height: 20rem; }
+  .formulario-contacto .enviar {
+    display: flex;
+    justify-content: flex-end; }
+
+@media (min-width: 768px) {
+  .formulario-contacto {
+    padding: 5rem;
+    margin-top: -10rem; } }

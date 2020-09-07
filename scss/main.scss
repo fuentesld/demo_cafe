@@ -66,9 +66,6 @@
   flex-wrap: wrap;
   .blog,.cursos{
     flex: 0 0 100%;
-    h2{
-      text-align:center;
-    }
   }
   .cursos{
     order: -1;
@@ -114,20 +111,27 @@
 .cursos-lista{
   padding: 0;
   list-style: none;
-  .curso{
-    padding-bottom: 3rem;
-    border-bottom: 1px solid #e1e1e1;
-    &:last-of-type{
-      border-bottom: none;
+}
+
+.curso{
+  padding: 3rem 0;
+  border-bottom: 1px solid $secondary-color;
+  &:last-of-type{
+    border-bottom: none;
+  }
+  p{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    span{
+      font-weight: 400;
     }
-    p{
-      font-family: 'PT Sans', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      span{
-        font-weight: 400;
-      }
+    &.descripcion{
+      font-weight: 400;
     }
+  }
+  h4{
+    margin-top: 0;
   }
 }
 
@@ -148,3 +152,34 @@
   }
 }
 
+// * Contacto
+.formulario-contacto{
+  background-color: $background-color;
+  padding: 1rem;
+  .campo{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    label{
+      flex: 0 0 8rem;
+    }
+    input:not([type="submit"]), textarea{
+      flex: 1;
+      border: 1px solid $primary-color;
+      padding: 1rem
+    }
+    textarea{
+      height: 20rem;
+    }
+  }
+  .enviar{
+    display:flex;
+    justify-content: flex-end;
+  }
+}
+@media (min-width: 768px ) {
+  .formulario-contacto{
+    padding: 5rem;
+    margin-top: -10rem;
+  }
+}
