@@ -1,20 +1,9 @@
-$primary-color: white ;
-$secondary-color: #eece1e;
+$primary-color: black ;
+$secondary-color: #784d3c;
+$background-color: rgb(228, 222, 222);
 $show-home-image: true;
-$home-image: url("../img/header.jpg");
+$home-image: url("../img/banner.jpg");
 $background-opacity: 0.9;
-
-@mixin background{
-  background-image: $home-image;
-  background-position: center center;
-  background-size: cover;
-  min-height: 56rem;
-  height: 100vh;
-}
-
-@mixin easeOut {
-  transition: all 0.5s ease-out
-}
 
 // Set Text Color
 @function set-text-color($color) {
@@ -25,24 +14,62 @@ $background-opacity: 0.9;
   }
 }
 
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  color:set-text-color($primary-color);
+  background: $background-color;
+  color: set-text-color($background-color);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  line-height: 2;
+}
+
+h1,h2,h3,h4{
+  font-family: 'PT Sans', san-serif;
+}
 h1{
-  font-size: 3.8rem;
+  font-size: 4.8rem;
 }
 
 h2{
-  font-size: 3.4rem;
+  font-size: 4rem;
+  line-height: 1.2;
 }
 
 h3{
-  font-size: 3rem;
+  font-size: 3.2rem;
+  line-height: 1.3;
 }
 
 h4{
-  font-size: 2.6rem;
+  font-size: 2.8rem;
+  line-height: 1.2;
 }
 
 img{
   max-width: 100%;
+}
+
+// * Utilides
+
+@mixin background{
+  background-image: $home-image;
+  background-position: center center;
+  background-size: cover;
+  min-height: 42rem;
+  height: 70vh;
+}
+
+@mixin easeOut {
+  transition: all 0.5s ease-out
 }
 
 .contenedor {
@@ -51,6 +78,15 @@ img{
   margin: 0 auto;
 }
 
+.centrar-texto{
+  text-align: center;
+}
+
+.m-0{
+  margin:0;
+}
+
+// =======================
 .seccion{
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -60,9 +96,7 @@ img{
   font-weight: 300;
 }
 
-.centrar-texto{
-  text-align: center;
-}
+
 
 .contenido-centrado{
   max-width: 80rem;
@@ -70,7 +104,7 @@ img{
 
 //* Botones
 .boton{
-  color:white;
+  color: set-text-color( $primary-color );
   border: none;
   display: block;
   flex: 0 0 100%;
@@ -96,12 +130,37 @@ img{
   display: block !important;
 }
 
-.boton-amarillo{
-  background-color: #e08709;
+.btn{
+  display: block;
+  // flex: 0 0 100%;
+  text-align: center;
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+  text-decoration: none;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin: 2rem 0;
+  &:hover{
+    cursor: pointer;
+  }
+}
+@media (min-width: 768px ) {
+  .btn{
+    display:inline-block;
+    // flex: 0 0 auto;
+  }
 }
 
-.boton-verde{
-  background-color: #71b100;
+.btn-primario{
+  background-color: $primary-color;
+  color: set-text-color( $primary-color );
+}
+
+.btn-secundario{
+  background-color: $secondary-color;
+  color: set-text-color( $primary-color );
 }
 
 

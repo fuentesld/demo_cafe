@@ -1,20 +1,150 @@
-@include config;
+@import 'config';
 
-html {
-  box-sizing: border-box;
-  font-size: 10px;
+.site-header{
+  @include background;
+  a {
+    color: white;
+    text-decoration:none;
+  }
+  h1 {
+    font-weight: 400;
+    span{
+      font-weight: 700;
+    }
+  }
+  .texto-header{
+    color: white;
+    margin-top: 1rem;
+    h2{
+      font-size: 3rem;
+      margin: 3rem 0;
+    }
+    p{
+      font-size: 2rem;
+    }
+  }
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+@media (min-width: 768px ) {
+  .site-header{
+    .texto-header{
+      margin-top: 15rem;
+    }
+  }
+  .barra{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-body{
-  color: #000;
-  background: $primary-color;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'PT Sans', sans-serif;
-  font-size: 1.6rem;
-  line-height: 2;
+
+.navegacion{
+  a{
+    display:block;
+    font-size: 1.8rem;
+    text-align: center;
+    text-decoration:none;
+    color: set-text-color($primary-color);
+  }
+}
+@media (min-width: 768px ) {
+  .navegacion a{
+    color: set-text-color($primary-color);
+    display: inline;
+    margin-right: 2rem;
+    text-decoration:none;
+    &:last-of-type{
+      margin-right: 0;
+    }
+  }
+}
+
+// * Blog
+.contenido-principal{
+  display:flex;
+  flex-wrap: wrap;
+  .blog,.cursos{
+    flex: 0 0 100%;
+    h2{
+      text-align:center;
+    }
+  }
+  .cursos{
+    order: -1;
+  }
+}
+@media (min-width: 768px ) {
+  .contenido-principal{
+    justify-content: space-between;
+    .blog{
+      flex-basis: calc( 66% - 1rem);
+    }
+    .cursos{
+      flex-basis: calc( 34% - 1rem);
+      order: 2;
+    }
+  }
+}
+
+.entrada-blog{
+  border-bottom: 1px solid $secondary-color;
+  margin-bottom: 1rem;
+  p{
+    margin: 0
+  }
+  &:last-of-type{
+    border:none;
+  }
+}
+@media (min-width: 768px ) {
+  .entrada-blog{
+    margin-bottom: 2rem;
+    display:flex;
+    justify-content: space-between;
+    .imagen{
+      flex: 0 0 40%;
+    }
+    .contenido-blog{
+      flex: 0 0 calc( 60% - 1rem );  
+    }
+  }
+}
+
+.cursos-lista{
+  padding: 0;
+  list-style: none;
+  .curso{
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e1e1e1;
+    &:last-of-type{
+      border-bottom: none;
+    }
+    p{
+      font-family: 'PT Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      span{
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+// * Footer
+.site-footer{
+  background-color: $primary-color;
+  padding: 3rem;
+  margin-top:4rem;
+  text-align: center;
+  p{
+    color: set-text-color($primary-color);
+    font-family: 'PT Sans' sans-serif;
+    font-size: 4rem;
+    font-weight: 400;
+    span{
+      font-weight: 700;
+    }
+  }
 }
 
